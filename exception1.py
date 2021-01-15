@@ -16,6 +16,7 @@ try:
 except Exception as exc:
     print('...this didnt work')
     print(f'\nthis is the Exception message... {exc}\n\n')
+    pass
 
 try:
     print('\ndividing my number by the input')
