@@ -9,7 +9,14 @@ with syntactic sugar, we run in one line
 remember, this is it:
     f1 = my_decorator(just_some_function1)
     f1()
+
+https://python-3-patterns-idioms-test.readthedocs.io/en/latest/PythonDecorators.html#using-functions-as-decorators
+https://realpython.com/primer-on-python-decorators
+
 """
+
+print('\n====================================')
+print('start here; define some functions:\n')
 
 
 def my_decorator(fn):
@@ -17,7 +24,7 @@ def my_decorator(fn):
 
     def wrapper():
         print('inside wrapper')
-        print('before function is called\n')
+        print('before function is called')
         fn()
         print('after function is called\n')
 
@@ -26,13 +33,13 @@ def my_decorator(fn):
 
 # without sugar
 def just_some_function1():
-    print('Wheee!')
+    print('...Wheee!')
 
 
 # with sugar
-@my_decorator
+@my_decorator  # calls my_decorator
 def just_some_function2():
-    print('Whooo!')
+    print('...Whooo!')
 
 
 if __name__ == '__main__':

@@ -1,11 +1,14 @@
 def my_decorator_with_args(*args):
+    def my_decorator(f):
+        print(args)
+        return f
     return my_decorator
 
 
 # with args
 @my_decorator_with_args(1, 2)
 def just_some_function3():
-    print("Whaaa!")
+    print("...Whaaa!")
 
 
 # ==============================================================================
