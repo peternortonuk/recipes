@@ -19,39 +19,38 @@ print('\n====================================')
 print('start here; define some functions:\n')
 
 
-def my_decorator(fn):
-    print('inside decorator\n')
+def my_decorator(f):
+    print('inside my_decorator\n')
 
-    def wrapper():
-        print('inside wrapper')
+    def decorated():
         print('before function is called')
-        fn()
+        f()
         print('after function is called\n')
 
-    return wrapper
+    return decorated
 
 
-# without sugar
-def just_some_function1():
+def my_function1():
     print('...Wheee!')
 
 
-# with sugar
-@my_decorator  # calls my_decorator
-def just_some_function2():
+@my_decorator
+def my_function2():
     print('...Whooo!')
 
 
 if __name__ == '__main__':
 
     # without sugar
-    print('\n====================================')
-    print('first function call (without sugar):\n')
-    f1 = my_decorator(just_some_function1)
-    f1()
+    print('\n============================')
+    print('function call WITHOUT sugar:\n')
+
+    decorated_ = my_decorator(my_function1)
+    decorated_()
     
     # with sugar
-    print('\n=================================')
-    print('first function call (with sugar):\n')
-    just_some_function2()
+    print('\n=========================')
+    print('function call WITH sugar:\n')
+
+    my_function2()
     pass
