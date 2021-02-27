@@ -17,10 +17,9 @@ def flatten(iterable):
     elif isinstance(iterable, list) and len(iterable) == 1 and not isinstance(iterable[0], list):
         # if its a list with a single entry that isnt itself a list
         return iterable
-    elif iterable == []:
+    elif not iterable:
         # it could be an empty list
         return []
-
     # this is the recursive case
     else:
         return flatten(iterable[0]) + flatten(iterable[1:])
