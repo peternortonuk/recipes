@@ -1,9 +1,12 @@
 """
 https://docs.python.org/3/glossary.html#term-iterator
 
-An object representing a stream of data. Repeated calls to the iterator’s __next__() method (or passing it to the
-built-in function next()) return successive items in the stream. When no more data are available a StopIteration
-exception is raised instead. Iterators are required to have an __iter__() method that returns the iterator object itself
+An object representing a stream of data.
+
+Repeated calls to the iterator’s __next__() method (or passing it to the built-in function next()) return
+successive items in the stream. When no more data are available a StopIteration exception is raised instead.
+
+Iterators are required to have an __iter__() method that returns the iterator object itself
 
 
 https://dbader.org/blog/python-iterators

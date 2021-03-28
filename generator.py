@@ -1,32 +1,13 @@
 """
-https://realpython.com/introduction-to-python-generators/
-When you call a generator function or use a generator expression, you return a special iterator called a generator.
-You can assign this generator to a variable in order to use it.
-When you call special methods on the generator, such as next(), the code within the function is executed up to yield .
+https://docs.python.org/3/glossary.html#term-generator
 
-https://pythontips.com/2013/09/29/the-python-yield-keyword-explained/
-https://realpython.com/lessons/understanding-generators/
-"""
+generator function = function which returns a generator iterator... looks like a normal function except that it contains
+yield expressions for producing a series of values usable in a for-loop or that can be retrieved one at a time with
+the next() function.
 
-# ===================================================================
-'''
-https://www.python.org/dev/peps/pep-0289/
-PEP 289 -- Generator Expressions
-Abstract... a high performance, memory efficient generalization of 
-list comprehensions and generators
-'''
-print('\n=========================================================\n'
-      'example: generator expression'
-      '\n========\n')
-
-g = (x**2 for x in range(10))
-print(next(g))
-print(next(g))
-print(next(g))
+generator iterator = object created by a generator function.
 
 
-# ===================================================================
-'''
 https://www.python.org/dev/peps/pep-0255/
 PEP 255 -- Simple Generators
 Abstract... the concept of generators to Python, as well as a new... yield statement.
@@ -43,7 +24,37 @@ all local state is retained, including the current bindings of local variables,
 the instruction pointer, and the internal evaluation stack: enough information is saved 
 so that the next time .next() is invoked, the function can proceed exactly 
 as if the yield statement were just another external call.
-'''
+
+
+https://www.python.org/dev/peps/pep-0289/
+PEP 289 -- Generator Expressions
+Abstract... a high performance, memory efficient generalization of list comprehensions and generators
+
+
+https://realpython.com/introduction-to-python-generators/
+When you call special methods on the generator iterator, such as next(), the code within the function is executed
+up to yield.
+
+https://pythontips.com/2013/09/29/the-python-yield-keyword-explained/
+
+https://realpython.com/lessons/understanding-generators/
+
+"""
+
+
+print('\n=========================================================\n'
+      'example: generator expression'
+      '\n========\n')
+
+g = (x**2 for x in range(10))
+print(next(g))
+print(next(g))
+print(next(g))
+
+
+# ===================================================================
+
+
 print('\n=========================================================\n'
       'example: simple generator'
       '\n========\n')
