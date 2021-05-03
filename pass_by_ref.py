@@ -21,6 +21,13 @@ function arguments can be:
    pass by value: handled as independent values... ie an independent copy of the original
    pass by assignment: python passes arguments neither by reference nor by value... but by assignment
 
+
+REPL versus file
+...the above steps occur only when this code is executed inside a REPL. If you were to take the example above, paste it
+into a file, and run the file, then you would find that the x is y line would return True.
+This occurs because compilers are smart. The CPython compiler attempts to make optimizations called peephole
+optimizations, which help save execution steps whenever possible.
+
 """
 
 
